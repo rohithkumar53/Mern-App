@@ -1,27 +1,18 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import LoginForm from './components/imports/LoginForm';
 
 function App() {
   return (
-    <div>
-      <div className='form-section'>
-        <div className='title'>
-          <h3>Sign into your account</h3>
-        </div>
-        <div className="login-inner-form">
-          <form method='POST'>
-            <div className="form-group form-box">
-              <input type="text" id='email' className="input-text" placeholder="Email Address" />
+    <div id="login">
+      <div className="container">
+        <div className="row login-box">
+            <div className="col-lg-7 bg-color align-self-center">
+              <LoginForm/>
             </div>
-            <div className="form-group form-box">
-              <input type="text" id='password' className="input-text" placeholder="Password" />
-            </div>
-            <div className="form-group">
-              <button className='btn btn-primary'>Login</button>
-            </div>
-          </form>
         </div>
       </div>
+      
     </div>
   );
 }

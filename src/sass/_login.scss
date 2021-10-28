@@ -1,0 +1,19 @@
+//login page styling
+#login{
+    min-height: 100vh;
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @extend .position-relative;
+    @extend .text-center; 
+
+    .login-box{
+        max-width: 960px;
+        margin: 0 auto;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+    /*login form styling*/
+    @extend .text-center;
+}
