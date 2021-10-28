@@ -16,7 +16,7 @@ export default function LoginForm(props) {
                       <input type="text" id='password' className="input-text" placeholder="Password" />
                     </div>
                     <div className="form-group">
-                      <button className='btn btn-primary'>Login</button>
+                      <button className='btn primary-btn'>Login</button>
                     </div>
                   </form>
                 </div>

@@ -15,5 +15,59 @@
         border-radius: 10px;
     }
     /*login form styling*/
-    @extend .text-center;
+    .form-section{
+        @extend .text-center;
+        max-width: 400px;
+        margin: 0 auto;
+        @extend .width-100;
+        > .title{
+            margin: 10px 0 50px 0;
+            > h3{
+                font-size: 25px;
+                @extend .font-bold;
+                color: #505050;
+            }
+        }
+        .login-inner-form{
+            @extend .position-relative;
+            color: #979797;
+            .form-box{
+                float:right;
+                @extend .width-100;
+                @extend .position-relative;
+
+                //style input text box
+                > .input-text{
+                    font-size: 14px;
+                    outline: none;
+                    color: #616161;
+                    border-radius: 50px;
+                    border: 1px solid transparent;
+                    @extend .background;
+                    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                    padding: 11px 45px 11px 20px;
+                    @extend .width-100;
+                    margin-bottom: 10px;
+                }
+            }
+            .primary-btn{
+                background: #ff214f;
+                @extend .width-100;
+                border: none;
+                color: #fff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+                padding: 10px 30px 9px 30px;
+                cursor: pointer;
+                height: 45px;
+                border-radius: 50px;
+                margin-top: 20px;
+
+                &:hover{
+                    background: #d61d42;
+                }
+            }
+        }
+    }
+    
+
 }
