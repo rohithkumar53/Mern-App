@@ -36,6 +36,23 @@
                 @extend .width-100;
                 @extend .position-relative;
 
+                //importing icons
+                .icon{
+                    position: absolute;
+                    right:25px;
+                    top:10px;
+                }
+                .icon.email::before{
+                    @extend .font-awesome;
+                    content: "\f0e0";
+                    
+                }
+                .icon.lock::before{
+                    @extend .font-awesome;
+                    @extend .font-bold;
+                    content: "\f023";
+                }
+
                 //style input text box
                 > .input-text{
                     font-size: 14px;
