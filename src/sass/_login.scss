@@ -115,6 +115,10 @@
                     @extend .font-bold;
                     content: "\f023";
                 }
+                .icon.user::before{
+                    @extend .font-awesome;
+                    content: "\f007";
+                }
 
                 //style input text box
                 > .input-text{
