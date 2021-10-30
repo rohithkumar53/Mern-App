@@ -8,11 +8,74 @@
     @extend .position-relative;
     @extend .text-center; 
 
+    .default-bg{
+        @extend .background;
+        color: #505050;
+    }
+
     .login-box{
         max-width: 960px;
         margin: 0 auto;
         box-shadow: 0 0 35px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
+
+        .bg-img{
+            padding: 0;
+            border-radius: 10px 0 0 10px;
+            background: rgba(0,0,0,0.04) url(http://localhost:3000/static/media/bg_img.0b3c570c.jpg);
+            background-size: cover;
+            top: 0;
+            bottom: 0;
+            opacity: 1;
+        }
+
+        .info{
+            height: 450px;
+            position: relative;
+            border: 1px solid green;
+
+            > .logo{
+                text-align: left;
+                margin:20px;
+
+                > .nav-brand{
+                    font-size: 22px;
+                    @extend .font-bold;
+                    color: #505050;
+                }
+            }
+
+            > .btn-section{
+                position: absolute;
+                top: 40%;
+                right: 0;
+                margin-bottom: 0;
+
+                .link-btn{
+                    font-size: 12px;
+                    @extend .font-bold;
+                }
+                .link-btn.active{
+                    background-color: #ff215f;
+                    color: #fff;
+                }
+
+                // btnprimary
+                > .btn-primary{
+                    @extend .text-center;
+                    line-height: 30px;
+                    width: 100px;
+                    text-transform: uppercase;
+                    border-radius: 50px 0 0 50px;
+                    margin-bottom: 10px;
+                    border: 0;
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
     }
     /*login form styling*/
     .form-section{

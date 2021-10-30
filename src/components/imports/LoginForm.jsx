@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LoginForm(props) {
     return (
-        <div>
+        <div className="col-sm-7 bg-color align-self-center">
             <div className='form-section'>
                 <div className='title'>
                   <h3>Sign into your account</h3>
