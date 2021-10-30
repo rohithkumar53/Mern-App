@@ -1,7 +1,6 @@
 //login page styling
 #login{
     min-height: 100vh;
-    border: 3px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +21,7 @@
         .bg-img{
             padding: 0;
             border-radius: 10px 0 0 10px;
-            background: rgba(0,0,0,0.04) url(http://localhost:3000/static/media/bg_img.0b3c570c.jpg);
+            background: rgba(0,0,0,0.04) url('../assets/bg_img.jpg');
             background-size: cover;
             top: 0;
             bottom: 0;
@@ -32,7 +31,6 @@
         .info{
             height: 450px;
             position: relative;
-            border: 1px solid green;
 
             > .logo{
                 text-align: left;
