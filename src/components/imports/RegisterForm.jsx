@@ -14,15 +14,15 @@ export default function RegisterForm() {
                             <i className="icon user"></i>
                         </div>
                         <div className="form-group form-box">
-                            <input type="text" id="email" className="input-text" placeholder="Email" />
+                            <input type="email" id="email" className="input-text" placeholder="Email" />
                             <i className="icon email"></i>
                         </div>
                         <div className="form-group form-box">
-                            <input type="text" id="password" className="input-text" placeholder="Password" />
+                            <input type="password" id="password" className="input-text" placeholder="Password" />
                             <i className="icon lock"></i>
                         </div>
                         <div className="form-group form-box">
-                            <input type="text" id="passwordcheck" className="input-text" placeholder="Verify Password" />
+                            <input type="password" id="passwordcheck" className="input-text" placeholder="Verify Password" />
                             <i className="icon lock"></i>
                         </div>
                         <div className="form-group">
