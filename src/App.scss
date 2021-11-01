@@ -4,6 +4,10 @@
 *{
     font-family: 'Open Sans', sans-serif;
 }
+.primary-gradient{
+    background: #ff512f;
+    background: linear-gradient(to right, #dd2476, #ff512f);
+}
 
 //import partial files
 @import './sass/extends';

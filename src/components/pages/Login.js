@@ -3,9 +3,14 @@ import BaseLogin from '../imports/BaseLogin';
 import LoginForm from '../imports/LoginForm';
 export default function Login() {
     return (
-        <>
-            <BaseLogin/>
-            <LoginForm/>
-        </>
+        <div id="login">
+            <div className="container">
+                <div className="row login-box">
+                    <BaseLogin/>
+                    <LoginForm/>
+                </div>
+            </div>
+        </div>
     )
 }
+
