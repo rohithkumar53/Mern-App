@@ -1,4 +1,6 @@
 const bcrypt = require('bcrypt');
+const User = require("../model/schema");
+
 //controller for register
 exports.registerUser=async (req,res)=>{
     try {
@@ -17,11 +19,28 @@ exports.registerUser=async (req,res)=>{
         }
         //hashing password
         const hash= await bcrypt.hashSync(password, 10);
-        res.json({email, hash, passwordCheck, username});
+        const newUser= new User({
+            email,
+            password: hash,
+            username
+        });
+
+        newUser
+            .save()
+            .then(register => {
+                res.json(register)
+            })
+            .catch(error =>{
+                res.status(406).json({err: error.message || "Something went wrong while registartion"});
+            })
+
+       
     } catch (error) {
         res.status(500).json({err: error.message || "Error while registartion"});
     }
 }
+
+
 //controller for login
 exports.login= (req, res)=>{
     try {
