@@ -72,3 +72,14 @@ exports.login= async (req, res)=>{
         res.status(500).json({err: error.message || "Error while login!!"});
     }
 }
+
+//delete user controller
+exports.delete= async (req,res)=>{
+    try{
+        await User.findByIdAndDelete(req.user_id);
+        res.json({msg: "User Deleted Successfully..!"});
+    }
+    catch (error) {
+        res.status(500).json({err: error.message || "Error while deleting user!!"});
+    }
+}
