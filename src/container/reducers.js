@@ -8,7 +8,31 @@ export default function rootReducer(state=initialState, action){
         case actionType.REGISTER_SUCCESS:
             return{
                 ...state,
-                isLoggedIn: true 
+                isLoggedIn: false
+            }
+        case actionType.REGISTER_FAIL:
+            return {
+                ...state,
+                isLoggedIn: false,
+                
+            }
+        case actionType.LOGIN_SUCCESS:
+            return{
+                ...state,
+                isLoggedIn: true,
+                user: payload.user
+            }
+        case actionType.LOGIN_FAIL:
+            return{
+                ...state,
+                isLoggedIn: false,
+                user: null
+            }
+        case actionType.LOGOUT:
+            return{
+                ...state,
+                isLoggedIn: false,
+                user: null
             }
         default:
             return state;
