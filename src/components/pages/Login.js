@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 import BaseLogin from '../imports/BaseLogin';
 import LoginForm from '../imports/LoginForm';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
+import { registerAction } from '../../container/actions';
 export default function Login() {
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
 
     const dispatch = useDispatch();
+    const store= useStore();
+
     //handle submit handler function
     const handleSubmit=(event)=>{
         event.preventDefault();
@@ -14,7 +17,8 @@ export default function Login() {
             email,
             password
         }
-        dispatch({type:"REGISTER_SUCCESS", payload:"login dispatch"});
+        console.log(dispatch(registerAction("Action Creator")));
+        console.log(store.getState());
         console.log(userCredential);
     }
 
