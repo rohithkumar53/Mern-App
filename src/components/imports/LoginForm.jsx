@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function LoginForm(props) {
+  let {handleSubmit,setEmail,setPassword}= props.loginState;
+  
     return (
         <div className="col-sm-7 bg-color align-self-center">
             <div className='form-section'>
@@ -8,13 +10,13 @@ export default function LoginForm(props) {
                   <h3>Sign into your account</h3>
                 </div>
                 <div className="login-inner-form">
-                  <form method='POST'>
+                  <form method='POST' onSubmit={handleSubmit}>
                     <div className="form-group form-box">
-                      <input type="text" id='email' className="input-text" placeholder="Email Address" />
+                      <input type="text" id='email' onChange={(e)=> setEmail(e.target.value)} className="input-text" placeholder="Email Address" />
                       <i className='icon email'></i>
                     </div>
                     <div className="form-group form-box">
-                      <input type="text" id='password' className="input-text" placeholder="Password" />
+                      <input type="password" id='password' onChange={(e)=> setPassword(e.target.value)} className="input-text" placeholder="Password" />
                       <i className='icon lock'></i>
                     </div>
                     <div className="form-group">
