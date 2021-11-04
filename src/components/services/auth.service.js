@@ -2,8 +2,9 @@ import axios from "axios";
 
 //register request
 export const register= (newUser)=>{
+    console.log(process.env.baseURL);
     //post request on http://localhost:5000/api/register
-    return axios.post(`${process.env.baseURL}/register`,newUser)
+    return axios.post(`${process.env.baseURL}/api/register`,newUser)
         .then(response =>{
             if(response.data){
                 return Promise.resolve(response.data);
