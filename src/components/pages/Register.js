@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import BaseLogin from '../imports/BaseLogin'
-import RegisterForm from '../imports/RegisterForm'
+import {registerAction} from "../../container/actions";
+import BaseLogin from '../imports/BaseLogin';
+import RegisterForm from '../imports/RegisterForm';
 export default function Register() {
 
     const [username, setUsername]=useState("");

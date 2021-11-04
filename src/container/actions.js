@@ -3,7 +3,7 @@ import * as AuthService from "../components/services/auth.service";
 
 //register action
 export const registerAction = (payload)=> (dispatch)=>{
-    AuthService.register(payload)
+    return AuthService.register(payload)
         .then(response =>{
             dispatch({
                 type: actionType.REGISTER_SUCCESS,
@@ -15,6 +15,25 @@ export const registerAction = (payload)=> (dispatch)=>{
             dispatch({
                 type: actionType.REGISTER_FAIL,
                 payload: {err: error.message || "Registration Failed"}
+            })
+            return Promise.reject(error);
+        })
+}
+
+//login action
+export const loginAction = (userCredential) => (dispatch) =>{
+    return AuthService.login(userCredential)
+        .then(data =>{
+            dispatch({
+                type: actionType.LOGIN_SUCCESS,
+                payload: data
+            })
+            return Promise.resolve(data);
+        })
+        .catch(error =>{
+            dispatch({
+                type: actionType.REGISTER_FAIL,
+                payload: {err: error.message || "Login Failed"}
             })
             return Promise.reject(error);
         })
