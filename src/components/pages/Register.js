@@ -3,9 +3,11 @@ import {registerAction} from "../../container/actions";
 import {useDispatch} from "react-redux";
 import BaseLogin from '../imports/BaseLogin';
 import RegisterForm from '../imports/RegisterForm';
+import { useHistory } from 'react-router-dom';
 export default function Register() {
 
     const dispatch= useDispatch();
+    const history=useHistory();
 
     const [username, setUsername]=useState("");
     const [email, setEmail]=useState("");
@@ -24,7 +26,9 @@ export default function Register() {
         const user={username: "admin", email: "admin@gmail.com", password:"admin123", passwordCheck:"admin123"};
         const validate= dispatch(registerAction(user));
         validate
-            .then(data => {console.log(data)})
+            .then(data => {
+                history.push("/login");
+            })
             .catch(error => {console.log(error)})
         // console.log(newUser);
     }

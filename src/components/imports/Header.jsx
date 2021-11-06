@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header>
             <nav className="navbar navbar-expand-lg navbar-light primary-gradient shadow">
-                <Link className="nav-link nav-brand mx-auto">
+                <Link className="nav-link nav-brand mx-auto" to="/">
                     <h3 className="text-light m-0">MERN Stack Application</h3>
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
