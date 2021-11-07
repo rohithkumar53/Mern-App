@@ -23,14 +23,14 @@ export default function Register() {
             password,
             passwordCheck
         }
-        const user={username: "admin", email: "admin@gmail.com", password:"admin123", passwordCheck:"admin123"};
-        const validate= dispatch(registerAction(user));
+        
+        const validate= dispatch(registerAction(newUser));
         validate
             .then(data => {
                 history.push("/login");
             })
             .catch(error => {console.log(error)})
-        // console.log(newUser);
+        
     }
 
     let registerData={

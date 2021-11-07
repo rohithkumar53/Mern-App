@@ -6,11 +6,17 @@ export default function Home() {
 
     const user = useSelector(state => state.isLoggedIn);
     const history= useHistory();
+
+    const route=()=>{
+        const token=localStorage.getItem("x-access-token");
+        return token? true: false
+    }
+    
     useEffect(() => {
-        if(!user){
+        if(!route()){
             history.push("/login");
         }
-    }, [user, history]);
+    }, [route, history]);
 
     console.log(user);
 

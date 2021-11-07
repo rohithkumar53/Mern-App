@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 export default function Login() {
     const [email, setEmail]= useState("");
     const [password, setPassword]= useState("");
+    const [errorMessage, setError]= useState("");
 
     const dispatch = useDispatch();
     const store = useStore();
@@ -19,13 +20,12 @@ export default function Login() {
             email,
             password
         }
-        const userdata = { email : "admin@gmail.com", password: "admin123"}
-        const login = dispatch(loginAction(userdata));
+
+        const login = dispatch(loginAction(userCredential));
         login
             .then(data => history.push("/"))
-            .catch(error => console.log(error))
+            .catch(error => setError(error.err))
         console.log("store: ",store.getState());
-        // console.log(userCredential);
     }
 
     return (
@@ -33,7 +33,7 @@ export default function Login() {
             <div className="container">
                 <div className="row login-box">
                     <BaseLogin/>
-                    <LoginForm loginState={{handleSubmit,setEmail,setPassword}}/>
+                    <LoginForm loginState={{handleSubmit,setEmail,setPassword, errorMessage, setError}}/>
                 </div>
             </div>
         </div>
