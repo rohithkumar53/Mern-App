@@ -19,7 +19,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "npm-run-all --parallel startReact server",
+    "start": "npm-run-all --parallel server startReact",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
